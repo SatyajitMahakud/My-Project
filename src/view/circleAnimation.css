@@ -1,0 +1,236 @@
+.info {
+  animation: info 2s ease-in-out;
+}
+@keyframes info {
+  from {
+    transform: translate(90em);
+  }
+  to {
+    transform: translate(0em);
+  }
+}
+.backDoor {
+  position: relative;
+  width: 150px !important;
+  height: 330px;
+  top: 30px;
+  left: -90px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-image: url(../assets/open.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.door {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 150px;
+  height: 330px;
+  transform-origin: right;
+  transition: all 0.5s ease-in-out;
+  background-image: url(../assets/closed.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.doorOpen {
+  transform: perspective(600px) translateZ(0px) translateX(0px) translateY(0px)
+    rotateY(145deg);
+  background-image: url(../assets/door.png);
+}
+
+/* .hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 0s linear;
+} */
+.clicker:focus + .circle-container {
+  display: block;
+}
+.animation {
+  display: block;
+  position: relative;
+  width: 35em !important;
+  height: 35em;
+  padding: 2.8em;
+  /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+  /* border: dashed 4px; */
+  /* border-radius: 50%; */
+  margin: 1.75em auto 0;
+}
+.animation2 {
+  /* border: dashed 4px; */
+  border-radius: 50%;
+  background-color: transparent;
+  width: 35em;
+  height: 35em;
+  top: -35px;
+  left: -20px;
+  padding: 3em;
+  margin: -27em -3em 0;
+  /* transition: all 0.5s ease-in-out; */
+  color: rgb(15, 57, 85);
+  /* animation: rotation 1s ease-in-out; */
+  /* animation: rotation2 3s; */
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/* @keyframes animation2Transition {
+  from {
+    height: 0em;
+  }
+  to {
+    height: 35em;
+  }
+} */
+
+.innerCircle {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: animation2Transition;
+}
+.animation a {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4em;
+  height: 4em;
+  margin: -2em;
+  transition: all 0.2s ease-in-out;
+  color: rgb(15, 57, 85);
+}
+.animation img {
+  display: block;
+  width: 100%;
+}
+
+/*icon1*/
+.deg0 {
+  transform: translate(20em);
+  animation: deg0 1s ease-in-out;
+}
+@keyframes deg0 {
+  from {
+    transform: translate(-5em);
+  }
+  to {
+    transform: translate(20em);
+  }
+}
+
+.deg45 {
+  transform: rotate(45deg) translate(20em) rotate(-45deg);
+  animation: deg45 1s ease-in-out;
+}
+@keyframes deg45 {
+  from {
+    transform: translate(-5em);
+  }
+  to {
+    transform: rotate(45deg) translate(20em);
+  }
+}
+
+.deg135 {
+  transform: rotate(135deg) translate(20em) rotate(-135deg);
+  animation: deg135 1s ease-in-out;
+}
+@keyframes deg135 {
+  from {
+    transform: translate(-5em);
+  }
+  to {
+    transform: rotate(135deg) translate(20em);
+  }
+}
+.deg180 {
+  transform: translate(-20em);
+  animation: deg180 1s ease-in-out;
+}
+@keyframes deg180 {
+  from {
+    transform: translate(-5em);
+  }
+  to {
+    transform: translate(-20em);
+  }
+}
+.deg225 {
+  transform: rotate(225deg) translate(20em) rotate(-225deg);
+  animation: deg225 1s ease-in-out;
+}
+@keyframes deg225 {
+  from {
+    transform: translate(-5em);
+  }
+  to {
+    transform: rotate(225deg) translate(20em);
+  }
+}
+.deg315 {
+  transform: rotate(315deg) translate(20em) rotate(-315deg);
+  animation: deg315 1s ease-in-out;
+}
+@keyframes deg315 {
+  from {
+    transform: translate(-5em);
+  }
+  to {
+    transform: rotate(315deg) translate(20em);
+  }
+}
+/* a:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+} */
+
+/* @keyframes rotation2 {
+  from {
+    transform: rotate(359deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+} */
+.defaultInfo {
+  animation: defaultInfo 1s ease-in-out;
+}
+@keyframes defaultInfo {
+  from {
+    transform: translate(50em);
+  }
+  to {
+    transform: translate(0em);
+  }
+}
+
+.iconInfo {
+  animation: iconInfo 1s ease-in-out;
+}
+@keyframes iconInfo {
+  from {
+    transform: translate(50em);
+  }
+  to {
+    transform: translate(0em);
+  }
+}
+.knobsDiv {
+  width: 35em !important;
+  position: absolute;
+  top: 50%;
+  height: 1em !important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
