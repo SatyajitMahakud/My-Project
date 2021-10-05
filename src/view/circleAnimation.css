@@ -1,6 +1,7 @@
 .info {
   animation: info 2s ease-in-out;
 }
+
 @keyframes info {
   from {
     transform: translate(90em);
@@ -64,6 +65,8 @@
 }
 .animation2 {
   /* border: dashed 4px; */
+  display: flex;
+  flex-wrap: wrap;
   border-radius: 50%;
   background-color: transparent;
   width: 35em;
@@ -76,6 +79,12 @@
   color: rgb(15, 57, 85);
   /* animation: rotation 1s ease-in-out; */
   /* animation: rotation2 3s; */
+}
+@media (maxwidth: "767px") {
+  /* textAlign: 'center'; */
+}
+@media (maxwidth: "400px") {
+  /* textAlign: 'left'; */
 }
 @keyframes rotation {
   from {
@@ -203,7 +212,7 @@
     transform: rotate(0deg);
   }
 } */
-.defaultInfo {
+/* .defaultInfo {
   animation: defaultInfo 1s ease-in-out;
 }
 @keyframes defaultInfo {
@@ -213,9 +222,9 @@
   to {
     transform: translate(0em);
   }
-}
+} */
 
-.iconInfo {
+/* .iconInfo {
   animation: iconInfo 1s ease-in-out;
 }
 @keyframes iconInfo {
@@ -225,7 +234,7 @@
   to {
     transform: translate(0em);
   }
-}
+} */
 .knobsDiv {
   width: 35em !important;
   position: absolute;

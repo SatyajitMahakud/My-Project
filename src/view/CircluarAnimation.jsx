@@ -1,43 +1,20 @@
-import React, { useState, useLayoutEffect, useEffect, useRef, forwardRef } from 'react';
+import React, { useState, useEffect, useRef, } from 'react';
 import { Row, Container, Col, Button, Card, CardTitle, CardText, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 import './circleAnimation.css';
 import $ from 'jquery';
 import { BsInfoCircle } from 'react-icons/bs'
 import { FaTemperatureHigh, FaEnvira, FaGripfire, FaBriefcaseMedical, FaCarrot, FaFish } from 'react-icons/fa';
-import { gsap } from "gsap";
-import DigitalKnob from './DigitalKnob'
+import { gsap, TweenMax, Power3 } from "gsap";
+import DigitalKnob from './DigitalKnob';
 
 
-const FadeIn = forwardRef(({ children, stagger = 0, x = 0 }, ref) => {
-    const el = useRef();
-    const animation = useRef();
-
-    useLayoutEffect(() => {
-        animation.current = gsap.from(el.current.children, {
-            opacity: 0,
-            stagger,
-            x
-        });
-    }, []);
-
-    useEffect(() => {
-
-        // forward the animation instance
-        if (typeof ref === "function") {
-            ref(animation.current);
-        } else if (ref) {
-            ref.current = animation.current;
-        }
-    }, [ref]);
-
-    return <span ref={el}>{children}</span>
-});
 
 const CircluarAnimation = () => {
     const [info, setInfo] = useState(false);
     const [popoverOpen, setPopoverOpen] = useState(false);
     const [iconInfo, setIconInfo] = useState(false)
     const animation = useRef();
+
 
     const toggle = () => setPopoverOpen(!popoverOpen);
     const toggle2 = () => {
@@ -81,6 +58,10 @@ const CircluarAnimation = () => {
         //     { duration: 2.5, ease: "elastic.out(1, 0.3)", y: 150 })
     };
 
+    useEffect(() => {
+        gsap.to(".defaultInfo", { duration: 3, ease: "elastic.out(2, 0.5)", x: 60 });
+        gsap.to(".iconInfo", { duration: 3, ease: "elastic.out(2, 0.5)", x: 60 });
+    });
 
     return (
         <>
@@ -127,11 +108,9 @@ const CircluarAnimation = () => {
                             </Row>
                             {iconInfo === true ?
                                 <Row className="iconInfo mt-5" >
-
                                     <Card className="knob ml-5">
                                         <DigitalKnob />
                                     </Card>
-
                                 </Row> : null}
                         </Col>
                         : null}
